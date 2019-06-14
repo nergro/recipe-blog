@@ -6,7 +6,10 @@ const autocomplete = () => {
       <ul>
         <li>
           <div className='auto-left'>
-            <img src='https://www.themealdb.com/images/media/meals/1550442508.jpg' />
+            <img
+              src='https://www.themealdb.com/images/media/meals/1550442508.jpg'
+              alt='Recipe'
+            />
           </div>
           <div className='auto-right'>
             <h4>Chocolate Caramel Crispy</h4>
@@ -25,7 +28,10 @@ const autocomplete = () => {
         <hr />
         <li>
           <div className='auto-left'>
-            <img src='https://www.themealdb.com/images/media/meals/wvpvsu1511786158.jpg' />
+            <img
+              src='https://www.themealdb.com/images/media/meals/wvpvsu1511786158.jpg'
+              alt='Recipe'
+            />
           </div>
           <div className='auto-right'>
             <h4>Duck Confit</h4>
@@ -44,7 +50,10 @@ const autocomplete = () => {
         <hr />
         <li>
           <div className='auto-left'>
-            <img src='https://www.themealdb.com/images/media/meals/1520083578.jpg' />
+            <img
+              src='https://www.themealdb.com/images/media/meals/1520083578.jpg'
+              alt='Recipe'
+            />
           </div>
           <div className='auto-right'>
             <h4>Oxtail with broad beans</h4>

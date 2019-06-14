@@ -26,9 +26,7 @@ const topRecipes = () => {
 
                 <hr />
               </Card.Title>
-              <Card.Text>
-                <h3>#Pasta #Curry</h3>
-              </Card.Text>
+              <Card.Text>#Pasta #Curry99</Card.Text>
             </Card.Body>
           </Card>
         </a>
@@ -49,9 +47,7 @@ const topRecipes = () => {
 
               <hr />
             </Card.Title>
-            <Card.Text>
-              <h3>#Pasta #Curry</h3>
-            </Card.Text>
+            <Card.Text>#Pasta #Curry</Card.Text>
           </Card.Body>
         </Card>
         <Card className='top3'>
@@ -71,9 +67,7 @@ const topRecipes = () => {
 
               <hr />
             </Card.Title>
-            <Card.Text>
-              <h3>#Pasta #Curry</h3>
-            </Card.Text>
+            <Card.Text>#Pasta #Curry</Card.Text>
           </Card.Body>
         </Card>
         <Card className='top4'>
@@ -93,9 +87,7 @@ const topRecipes = () => {
 
               <hr />
             </Card.Title>
-            <Card.Text>
-              <h3>#Pasta #Curry</h3>
-            </Card.Text>
+            <Card.Text>#Pasta #Curry</Card.Text>
           </Card.Body>
         </Card>
         <Card className='top5'>
@@ -115,9 +107,7 @@ const topRecipes = () => {
 
               <hr />
             </Card.Title>
-            <Card.Text>
-              <h3>#Pasta #Curry</h3>
-            </Card.Text>
+            <Card.Text>#Pasta #Curry</Card.Text>
           </Card.Body>
         </Card>
         <Card className='top6'>
@@ -137,9 +127,7 @@ const topRecipes = () => {
 
               <hr />
             </Card.Title>
-            <Card.Text>
-              <h3>#Pasta #Curry</h3>
-            </Card.Text>
+            <Card.Text>#Pasta #Curry</Card.Text>
           </Card.Body>
         </Card>
       </div>

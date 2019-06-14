@@ -77,22 +77,22 @@ class Heading extends Component {
           </SlideDown>
 
           <div className='socials'>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-facebook-square' />
             </a>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-instagram' />
             </a>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-twitter' />
             </a>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-snapchat' />
             </a>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-pinterest' />
             </a>
-            <a href='#'>
+            <a href='#1'>
               <i className='fab fa-linkedin' />
             </a>
           </div>

@@ -5,6 +5,7 @@ function importAll(r) {
   let images = {};
   r.keys().map((item, index) => {
     images[item.replace('./', '')] = r(item);
+    return item;
   });
   return images;
 }
@@ -16,59 +17,59 @@ const images = importAll(
 const flags = () => {
   return (
     <div className='flags-wrap'>
-      <a href='#'>
-        <img src={images['canada.png']} />
+      <a href='#1'>
+        <img src={images['canada.png']} alt='canada' />
       </a>
-      <a href='#'>
-        <img src={images['china.png']} />
+      <a href='#1'>
+        <img src={images['china.png']} alt='china' />
       </a>
-      <a href='#'>
-        <img src={images['egypt.png']} />
+      <a href='#1'>
+        <img src={images['egypt.png']} alt='egypt' />
       </a>
-      <a href='#'>
-        <img src={images['france.png']} />
+      <a href='#1'>
+        <img src={images['france.png']} alt='france' />
       </a>
-      <a href='#'>
-        <img src={images['germany.png']} />
+      <a href='#1'>
+        <img src={images['germany.png']} alt='germany' />
       </a>
-      <a href='#'>
-        <img src={images['india.png']} />
+      <a href='#1'>
+        <img src={images['india.png']} alt='india' />
       </a>
-      <a href='#'>
-        <img src={images['ireland.png']} />
+      <a href='#1'>
+        <img src={images['ireland.png']} alt='ireland' />
       </a>
-      <a href='#'>
-        <img src={images['jamaica.png']} />
+      <a href='#1'>
+        <img src={images['jamaica.png']} alt='jamaica' />
       </a>
-      <a href='#'>
-        <img src={images['japan.png']} />
+      <a href='#1'>
+        <img src={images['japan.png']} alt='japan' />
       </a>
-      <a href='#'>
-        <img src={images['malaysia.png']} />
+      <a href='#1'>
+        <img src={images['malaysia.png']} alt='malaysia' />
       </a>
-      <a href='#'>
-        <img src={images['mexico.png']} />
+      <a href='#1'>
+        <img src={images['mexico.png']} alt='mexico' />
       </a>
-      <a href='#'>
-        <img src={images['morocco.png']} />
+      <a href='#1'>
+        <img src={images['morocco.png']} alt='morocco' />
       </a>
-      <a href='#'>
-        <img src={images['russia.png']} />
+      <a href='#1'>
+        <img src={images['russia.png']} alt='russia' />
       </a>
-      <a href='#'>
-        <img src={images['spain.png']} />
+      <a href='#1'>
+        <img src={images['spain.png']} alt='spain' />
       </a>
-      <a href='#'>
-        <img src={images['thailand.png']} />
+      <a href='#1'>
+        <img src={images['thailand.png']} alt='thailand' />
       </a>
-      <a href='#'>
-        <img src={images['united-kingdom.png']} />
+      <a href='#1'>
+        <img src={images['united-kingdom.png']} alt='uk' />
       </a>
-      <a href='#'>
-        <img src={images['united-states-of-america.png']} />
+      <a href='#1'>
+        <img src={images['united-states-of-america.png']} alt='usa' />
       </a>
-      <a href='#'>
-        <img src={images['vietnam.png']} />
+      <a href='#1'>
+        <img src={images['vietnam.png']} alt='vietnam' />
       </a>
     </div>
   );

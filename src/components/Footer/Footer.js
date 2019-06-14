@@ -15,7 +15,11 @@ const footer = () => {
             </p>
             <p>
               Recipe API source:{' '}
-              <a href='https://www.themealdb.com' target='_blank'>
+              <a
+                href='https://www.themealdb.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 themealdb.com
               </a>
             </p>
@@ -26,12 +30,15 @@ const footer = () => {
             <div className='footer-recipes'>
               <div className='footer-recipe'>
                 <div className='footer-recipe-img'>
-                  <img src='https://www.themealdb.com/images/media/meals/quuxsx1511476154.jpg' />
+                  <img
+                    src='https://www.themealdb.com/images/media/meals/quuxsx1511476154.jpg'
+                    alt='Footer recipe'
+                  />
                 </div>
                 <div className='footer-recipe-content'>
                   <div className='footer-recipe-title'>
                     <h5>
-                      <a href='#'>Spanish Tortilla</a>
+                      <a href='#1'>Spanish Tortilla</a>
                     </h5>
                   </div>
                   <div className='footer-recipe-author'>
@@ -44,12 +51,15 @@ const footer = () => {
               <hr />
               <div className='footer-recipe'>
                 <div className='footer-recipe-img'>
-                  <img src='https://www.themealdb.com/images/media/meals/xqqqtu1511637379.jpg' />
+                  <img
+                    src='https://www.themealdb.com/images/media/meals/xqqqtu1511637379.jpg'
+                    alt='Footer recipe'
+                  />
                 </div>
                 <div className='footer-recipe-content'>
                   <div className='footer-recipe-title'>
                     <h5>
-                      <a href='#'>Sticky Toffee Pudding</a>
+                      <a href='#1'>Sticky Toffee Pudding</a>
                     </h5>
                   </div>
                   <div className='footer-recipe-author'>
@@ -62,12 +72,15 @@ const footer = () => {
               <hr />
               <div className='footer-recipe'>
                 <div className='footer-recipe-img'>
-                  <img src='https://www.themealdb.com/images/media/meals/tvttqv1504640475.jpg' />
+                  <img
+                    src='https://www.themealdb.com/images/media/meals/tvttqv1504640475.jpg'
+                    alt='Footer recipe'
+                  />
                 </div>
                 <div className='footer-recipe-content'>
                   <div className='footer-recipe-title'>
                     <h5>
-                      <a href='#'>Massaman Beef curry</a>
+                      <a href='#1'>Massaman Beef curry</a>
                     </h5>
                   </div>
                   <div className='footer-recipe-author'>
@@ -82,40 +95,40 @@ const footer = () => {
           <div className='right'>
             <h2>Search by category</h2>
             <div className='right-categories'>
-              <a href='#'>
+              <a href='#1'>
                 <p>Beef</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Chicken</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Desert</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Lamb</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Miscellaneous</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Pasta</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Pork</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Seafood</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Side</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Starter</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Vegan</p>
               </a>
-              <a href='#'>
+              <a href='#1'>
                 <p>Vegetarian</p>
               </a>
             </div>
@@ -126,25 +139,25 @@ const footer = () => {
 
       <div className='copyright'>
         <p>
-          Copyright &copy; 2019 <a href=''>nng.lt</a>
+          Copyright &copy; 2019 <a href='#1'>nng.lt</a>
         </p>
         <div className='footer-socials'>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-facebook-square' />
           </a>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-instagram' />
           </a>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-twitter' />
           </a>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-snapchat' />
           </a>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-pinterest' />
           </a>
-          <a href='#'>
+          <a href='#1'>
             <i className='fab fa-linkedin' />
           </a>
         </div>

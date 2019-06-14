@@ -4,3 +4,9 @@
 @import './Footer/Footer.scss';
 @import './TopRecipes/TopRecipes.scss';
 @import './Flags/Flags.scss';
+
+.card-text {
+  color: #376089 !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 10px !important;
+}

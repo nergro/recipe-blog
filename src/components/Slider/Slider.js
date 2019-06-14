@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import { Card } from 'react-bootstrap';
 import Slider from 'react-slick';
 
@@ -40,6 +42,11 @@ class Heading extends Component {
 
       adaptiveHeight: true
     };
+
+    let recipes = this.props.latestRecipes.slice(0, 5);
+    console.log('RECIPEZ');
+    console.log(recipes);
+
     return (
       <div
         className='slider-wrap'
@@ -53,7 +60,8 @@ class Heading extends Component {
         </h5>
 
         <Slider {...settings}>
-          <div>
+          {/* {recipes.map(recipe => {
+            return  <div>
             <Card>
               <Card.Img
                 variant='top'
@@ -71,112 +79,47 @@ class Heading extends Component {
 
                   <hr />
                 </Card.Title>
-                <Card.Text>
-                  <h3>#Pasta #Curry</h3>
-                </Card.Text>
+                <Card.Text>#Pasta #Curry</Card.Text>
               </Card.Body>
             </Card>
           </div>
-          <div>
-            <Card>
-              <Card.Img
-                variant='top'
-                src='https://www.themealdb.com/images/media/meals/wssvvs1511785879.jpg'
-              />
-              <Card.Body>
-                <Card.Title>
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <br />
-                  <h2>Spicy Arrabiata Penne</h2>
+          })} */}
+          {recipes.map(recipe => {
+            console.log(recipe);
+            return (
+              <div>
+                <Card>
+                  <Card.Img variant='top' src={recipe.strMealThumb} />
+                  <Card.Body>
+                    <Card.Title>
+                      <i className='fas fa-star full' />
+                      <i className='fas fa-star full' />
+                      <i className='fas fa-star full' />
+                      <i className='fas fa-star empty' />
+                      <i className='fas fa-star empty' />
+                      <br />
+                      <h2>{recipe.strMeal}</h2>
 
-                  <hr />
-                </Card.Title>
-                <Card.Text>
-                  <h3>#Pasta #Curry</h3>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card>
-              <Card.Img
-                variant='top'
-                src='https://www.themealdb.com/images/media/meals/xqrwyr1511133646.jpg'
-              />
-              <Card.Body>
-                <Card.Title>
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <br />
-                  <h2>Spicy Arrabiata Penne</h2>
-
-                  <hr />
-                </Card.Title>
-                <Card.Text>
-                  <h3>#Pasta #Curry</h3>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card>
-              <Card.Img
-                variant='top'
-                src='https://www.themealdb.com/images/media/meals/spswqs1511558697.jpg'
-              />
-              <Card.Body>
-                <Card.Title>
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <br />
-                  <h2>Spicy Arrabiata Penne</h2>
-
-                  <hr />
-                </Card.Title>
-                <Card.Text>
-                  <h3>#Pasta #Curry</h3>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card>
-              <Card.Img
-                variant='top'
-                src='https://www.themealdb.com/images/media/meals/rxvxrr1511797671.jpg'
-              />
-              <Card.Body>
-                <Card.Title>
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <i className='fas fa-star' />
-                  <br />
-                  <h2>Spicy Arrabiata Penne</h2>
-
-                  <hr />
-                </Card.Title>
-                <Card.Text>
-                  <h3>#Pasta #Curry</h3>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
+                      <hr />
+                    </Card.Title>
+                    <Card.Text>
+                      #{recipe.strArea} #{recipe.strCategory}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            );
+          })}
         </Slider>
       </div>
     );
   }
 }
 
-export default Heading;
+const mapStateToProps = state => {
+  return {
+    latestRecipes: state.latestRecipes
+  };
+};
+
+export default connect(mapStateToProps)(Heading);

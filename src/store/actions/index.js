@@ -1,0 +1,1 @@
+export { fetchLatestRecipes } from './actions';
