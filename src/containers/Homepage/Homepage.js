@@ -4,6 +4,8 @@ import Slider from '../../components/Slider/Slider';
 import Basilbox from '../../components/Basilbox/Basilbox';
 import Footer from '../../components/Footer/Footer';
 import TopRecipes from '../../components/TopRecipes/TopRecipes';
+import Flags from '../../components/Flags/Flags';
+
 class Homepage extends Component {
   render() {
     return (
@@ -12,6 +14,7 @@ class Homepage extends Component {
         <Slider />
         <Basilbox />
         <TopRecipes />
+        <Flags />
         <Footer />
       </div>
     );
