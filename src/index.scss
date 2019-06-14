@@ -1,0 +1,12 @@
+@import 'styles/variables/all';
+@import 'styles/global/all';
+@import 'styles/layout';
+
+@import 'components/index.scss';
+
+body {
+  margin: 0;
+}
+h1 {
+  color: $color__fiord;
+}

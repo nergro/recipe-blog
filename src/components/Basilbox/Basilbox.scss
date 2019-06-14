@@ -1,0 +1,39 @@
+.basil-box {
+  background: $color__basilgreen;
+}
+.basil-box h1,
+.basil-box h5 {
+  font-family: 'Roboto Slab';
+  font-weight: $font-weight__body;
+  margin-bottom: 0;
+}
+.basil-box h1 {
+  padding-top: 40px;
+  font-size: 4rem;
+  color: $color__white;
+
+  @include breakpoint-down(lg) {
+    font-size: 4.5rem;
+  }
+  @include breakpoint-down(md) {
+    font-size: 4rem;
+  }
+  @include breakpoint-down(sm) {
+    font-size: 3.5rem;
+  }
+}
+.basil-box h5 {
+  padding-bottom: 40px;
+  font-size: 2.5rem;
+  color: $color__white;
+
+  @include breakpoint-down(lg) {
+    font-size: 3rem;
+  }
+  @include breakpoint-down(md) {
+    font-size: 2.5rem;
+  }
+  @include breakpoint-down(sm) {
+    font-size: 2rem;
+  }
+}
