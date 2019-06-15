@@ -50,11 +50,13 @@ class Heading extends Component {
                   <NavDropdown.Item href='/categories'>
                     All categories
                   </NavDropdown.Item>
-                  <NavDropdown.Item href='#action/3.2'>
+                  <NavDropdown.Item href='/categories/Starter'>
                     Starter
                   </NavDropdown.Item>
-                  <NavDropdown.Item href='#action/3.3'>Desert</NavDropdown.Item>
-                  <NavDropdown.Item href='#action/3.4'>
+                  <NavDropdown.Item href='/categories/Dessert'>
+                    Dessert
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href='/categories/Miscellaneous'>
                     Miscellaneous
                   </NavDropdown.Item>
                 </NavDropdown>

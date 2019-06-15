@@ -1,8 +1,6 @@
 import React from 'react';
 
 const jumbotron = props => {
-  console.log('PROPS');
-  console.log(props);
   return (
     <div className='jumbotron'>
       <div className='path'>

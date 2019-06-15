@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import * as actions from '../../store/actions';
 import Heading from '../../components/Heading/Heading';
 import Jumbotron from '../../components/UI/Jumbotron/Jumbotron';
@@ -11,6 +13,10 @@ class Categories extends Component {
   componentDidMount() {
     this.props.fetchCategories();
   }
+  dosmth = name => {
+    console.log(this.props);
+    this.props.history.push('/categories/' + name);
+  };
   render() {
     const wrapperStyle = {
       display: this.props.loading
@@ -21,25 +27,29 @@ class Categories extends Component {
     };
     const content = this.props.loading ? (
       <Spinner />
-    ) : (
+    ) : this.props.categories ? (
       this.props.categories.map(cat => {
         let excerpt = cat.strCategoryDescription.split('.').slice(0, 1);
-        console.log(excerpt);
         return (
-          <Card>
-            <Card.Img variant='top' src={cat.strCategoryThumb} />
-            <Card.Body>
-              <Card.Title>
-                <br />
-                <h2>{cat.strCategory}</h2>
-                <hr />
-              </Card.Title>
-              <Card.Text>{excerpt}</Card.Text>
-            </Card.Body>
-          </Card>
+          <div
+            onClick={name => this.dosmth(cat.strCategory)}
+            key={cat.idCategory}
+          >
+            <Card>
+              <Card.Img variant='top' src={cat.strCategoryThumb} />
+              <Card.Body>
+                <Card.Title>
+                  <br />
+                  <h2>{cat.strCategory}</h2>
+                  <hr />
+                </Card.Title>
+                <Card.Text>{excerpt}</Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
         );
       })
-    );
+    ) : null;
     const error =
       this.props.errorMsg.length > 0 ? (
         <h1 style={{ textAlign: 'center' }}>Sorry! Something went wrong :(</h1>
@@ -75,4 +85,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Categories);
+)(withRouter(Categories));

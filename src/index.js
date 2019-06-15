@@ -12,6 +12,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import latestReducer from './store/reducers/latest';
 import categoriesReducer from './store/reducers/categories';
+import categoryReducer from './store/reducers/category';
 
 const composeEnhancers =
   process.env.NODE_ENV === 'development'
@@ -20,7 +21,8 @@ const composeEnhancers =
 
 const rootReducer = combineReducers({
   latest: latestReducer,
-  categories: categoriesReducer
+  categories: categoriesReducer,
+  category: categoryReducer
 });
 
 const store = createStore(
