@@ -1,1 +1,1 @@
-## Recie blog
+## Recipe blog

@@ -57,10 +57,18 @@
 
 .recipe-wrap {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
+
   margin-top: 50px;
   padding-bottom: 50px;
   justify-items: center;
+
+  @media (max-width: 1999px) {
+    grid-template-columns: auto auto auto;
+    .card:nth-child(4n) {
+      display: none;
+    }
+  }
 
   @include breakpoint-down(lgx) {
     grid-template-columns: auto auto;
@@ -70,7 +78,7 @@
   }
   @include breakpoint-down(md) {
     grid-template-columns: auto;
-    .card:nth-child(4n) {
+    .card:nth-child(5n) {
       display: none;
     }
   }

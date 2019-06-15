@@ -8,28 +8,27 @@ const topRecipes = () => {
       <h5>Meals You should try with no doubt</h5>
       <button className='viewall-button'>View All Recipes</button>
       <div className='recipe-wrap' id='recipe-wrap'>
-        <a href='/recipe/1'>
-          <Card className='top1'>
-            <Card.Img
-              variant='top'
-              src='https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg'
-            />
-            <Card.Body>
-              <Card.Title>
-                <i className='fas fa-star full' />
-                <i className='fas fa-star full' />
-                <i className='fas fa-star full' />
-                <i className='fas fa-star empty' />
-                <i className='fas fa-star empty' />
-                <br />
-                <h2>Spicy Arrabiata Penne</h2>
+        <Card className='top1'>
+          <Card.Img
+            variant='top'
+            src='https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg'
+          />
+          <Card.Body>
+            <Card.Title>
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star empty' />
+              <i className='fas fa-star empty' />
+              <br />
+              <h2>Spicy Arrabiata Penne</h2>
 
-                <hr />
-              </Card.Title>
-              <Card.Text>#Pasta #Curry99</Card.Text>
-            </Card.Body>
-          </Card>
-        </a>
+              <hr />
+            </Card.Title>
+            <Card.Text>#Pasta #Curry99</Card.Text>
+          </Card.Body>
+        </Card>
+
         <Card className='top2'>
           <Card.Img
             variant='top'
@@ -111,6 +110,46 @@ const topRecipes = () => {
           </Card.Body>
         </Card>
         <Card className='top6'>
+          <Card.Img
+            variant='top'
+            src='https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg'
+          />
+          <Card.Body>
+            <Card.Title>
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star empty' />
+              <i className='fas fa-star empty' />
+              <br />
+              <h2>Spicy Arrabiata Penne</h2>
+
+              <hr />
+            </Card.Title>
+            <Card.Text>#Pasta #Curry</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className='top7'>
+          <Card.Img
+            variant='top'
+            src='https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg'
+          />
+          <Card.Body>
+            <Card.Title>
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star full' />
+              <i className='fas fa-star empty' />
+              <i className='fas fa-star empty' />
+              <br />
+              <h2>Spicy Arrabiata Penne</h2>
+
+              <hr />
+            </Card.Title>
+            <Card.Text>#Pasta #Curry</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className='top8'>
           <Card.Img
             variant='top'
             src='https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg'

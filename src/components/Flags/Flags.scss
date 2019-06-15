@@ -12,6 +12,13 @@
 }
 .flags-wrap a {
   margin-right: 10px;
+
+  @media (min-width: 1700px) {
+    margin-right: 20px;
+  }
+  @media (min-width: 2500px) {
+    margin-right: 40px;
+  }
 }
 .flags-wrap img:hover {
   transform: scale(1.1);
