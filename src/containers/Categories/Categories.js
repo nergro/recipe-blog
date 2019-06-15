@@ -13,8 +13,7 @@ class Categories extends Component {
   componentDidMount() {
     this.props.fetchCategories();
   }
-  dosmth = name => {
-    console.log(this.props);
+  redirect = name => {
     this.props.history.push('/categories/' + name);
   };
   render() {
@@ -32,7 +31,7 @@ class Categories extends Component {
         let excerpt = cat.strCategoryDescription.split('.').slice(0, 1);
         return (
           <div
-            onClick={name => this.dosmth(cat.strCategory)}
+            onClick={name => this.redirect(cat.strCategory)}
             key={cat.idCategory}
           >
             <Card>

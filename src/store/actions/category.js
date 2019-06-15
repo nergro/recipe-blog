@@ -30,8 +30,6 @@ export const fetchCategory = category => {
         dispatch(fetchCategorySuccess(res.data['meals']));
       })
       .catch(error => {
-        console.log('FROM ERROR');
-        console.log(error);
         dispatch(fetchCategoryFail(error));
       });
   };

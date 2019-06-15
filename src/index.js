@@ -13,6 +13,7 @@ import * as serviceWorker from './serviceWorker';
 import latestReducer from './store/reducers/latest';
 import categoriesReducer from './store/reducers/categories';
 import categoryReducer from './store/reducers/category';
+import recipeReducer from './store/reducers/recipe';
 
 const composeEnhancers =
   process.env.NODE_ENV === 'development'
@@ -22,7 +23,8 @@ const composeEnhancers =
 const rootReducer = combineReducers({
   latest: latestReducer,
   categories: categoriesReducer,
-  category: categoryReducer
+  category: categoryReducer,
+  recipe: recipeReducer
 });
 
 const store = createStore(

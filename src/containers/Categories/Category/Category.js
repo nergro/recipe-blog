@@ -25,22 +25,31 @@ class Category extends Component {
 
     this.props.fetchCategoryMeals(curr);
   }
+
+  onMealClick = mealId => {
+    this.props.history.push(
+      '/categories/' + this.state.currentPage + '/' + mealId
+    );
+  };
+
   render() {
     const meals = this.props.loading ? (
       <Spinner />
     ) : this.props.meals ? (
       this.props.meals.map(meal => (
-        <Card key={meal.idMeal}>
-          <Card.Img variant='top' src={meal.strMealThumb} />
-          <Card.Body>
-            <Card.Title>
-              <br />
-              <h2>{meal.strMeal}</h2>
-              <hr />
-            </Card.Title>
-            {/* <Card.Text>{excerpt}</Card.Text> */}
-          </Card.Body>
-        </Card>
+        <div key={meal.idMeal} onClick={id => this.onMealClick(meal.idMeal)}>
+          <Card>
+            <Card.Img variant='top' src={meal.strMealThumb} />
+            <Card.Body>
+              <Card.Title>
+                <br />
+                <h2>{meal.strMeal}</h2>
+                <hr />
+              </Card.Title>
+              {/* <Card.Text>{excerpt}</Card.Text> */}
+            </Card.Body>
+          </Card>
+        </div>
       ))
     ) : (
       <h1 style={{ textAlign: 'center' }}>No meals found in this category</h1>
@@ -56,7 +65,7 @@ class Category extends Component {
     return (
       <div>
         <Heading />
-        <Jumbotron location={this.state.currentPage} />
+        <Jumbotron location={this.state.currentPage} setCategory={true} />
         <div className='categories-wrapper' style={wrapperStyle}>
           {meals}
         </div>

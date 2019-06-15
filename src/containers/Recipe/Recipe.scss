@@ -1,0 +1,281 @@
+.single-recipe {
+  /*  Head */
+  .head {
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+
+    @include breakpoint-down(md) {
+    }
+
+    .category,
+    .location,
+    .rating,
+    .difficulty {
+      display: inline-block;
+      margin: 0 50px;
+      text-align: left;
+      font-size: 2rem;
+      font-weight: $font-weight__headings;
+      @include breakpoint-down(lg) {
+        margin: 0 30px;
+      }
+      @include breakpoint-down(md) {
+        margin: 10px 60px;
+      }
+    }
+
+    .category {
+      position: relative;
+      .fas {
+        position: absolute;
+        right: 120%;
+        bottom: -5%;
+      }
+      @include breakpoint-down(md) {
+        right: -5%;
+      }
+    }
+
+    .location {
+      position: relative;
+      .fas {
+        position: absolute;
+        right: 115%;
+        bottom: -15%;
+      }
+      @include breakpoint-down(lg) {
+        right: -3%;
+      }
+      @include breakpoint-down(md) {
+        right: -5%;
+      }
+    }
+
+    .rating {
+      position: relative;
+      span {
+        font-size: 1.5rem;
+        color: #000;
+      }
+      .stars {
+        margin-top: 5px;
+
+        .empty {
+          color: $color__lightgray;
+        }
+        .full {
+          color: #ffd700;
+        }
+      }
+      @include breakpoint-down(md) {
+      }
+    }
+    .difficulty {
+      span {
+        font-size: 1.5rem;
+        color: #000;
+      }
+    }
+  }
+  /* Recipe section */
+  .flexbox-container {
+    display: -ms-flex;
+    display: -webkit-flex;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .left-col {
+      flex-basis: 40%;
+      padding: 10px;
+      text-align: center;
+
+      img {
+        max-width: 450px;
+        max-height: 450px;
+      }
+      @include breakpoint-down(md) {
+        img {
+          max-width: 300px;
+          max-height: 300px;
+        }
+      }
+      .img-hr {
+        height: 2px;
+        background: $color__lightgray;
+        opacity: 0.3;
+        width: 80%;
+      }
+
+      .prep {
+        .serving,
+        .time {
+          margin: 0 20px;
+          @include breakpoint-down(md) {
+            margin: 0 50px;
+          }
+        }
+        .serving span,
+        .time span {
+          font-size: 1.8rem;
+        }
+        .serving .fas,
+        .time .far {
+          margin-right: 10px;
+        }
+        strong {
+          font-weight: $font-weight__headings;
+        }
+      }
+    }
+    .right-col {
+      flex-basis: 40%;
+
+      h2 {
+        font-size: 4.5rem;
+        color: $color__grey;
+
+        @include breakpoint-down(lg) {
+          font-size: 4rem;
+        }
+        @include breakpoint-down(md) {
+          font-size: 3.5rem;
+        }
+        @include breakpoint-down(sm) {
+          font-size: 3rem;
+        }
+      }
+
+      .ingr-list {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        justify-items: center;
+
+        // float: left;
+        // columns: 2;
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none; /* Likely future */
+        @include breakpoint-down(md) {
+          columns: 1;
+        }
+
+        .measure {
+          font-weight: $font-weight__headings;
+        }
+        .input-label {
+          @include breakpoint-down(md) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .instructions {
+    h2 {
+      font-size: 4.5rem;
+      color: $color__grey;
+      text-align: center;
+
+      @include breakpoint-down(lg) {
+        font-size: 4rem;
+      }
+      @include breakpoint-down(md) {
+        font-size: 3.5rem;
+      }
+      @include breakpoint-down(sm) {
+        font-size: 3rem;
+      }
+    }
+
+    .instr-text {
+      display: flex;
+
+      justify-content: center;
+      p {
+        width: 80%;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+/* Checkbox */
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $color__basilgreen;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 8px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container input[type='checkbox']:checked + .input-label {
+  text-decoration: line-through;
+}
