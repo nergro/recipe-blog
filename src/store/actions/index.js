@@ -1,1 +1,2 @@
-export { fetchLatestRecipes } from './actions';
+export { fetchLatestRecipes } from './latest';
+export { fetchCategories } from './categories';

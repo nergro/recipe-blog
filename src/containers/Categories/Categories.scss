@@ -1,0 +1,39 @@
+.categories-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  justify-items: center;
+
+  @media (max-width: 1999px) {
+    grid-template-columns: auto auto auto;
+  }
+
+  @include breakpoint-down(lgx) {
+    grid-template-columns: auto auto;
+  }
+  @include breakpoint-down(md) {
+    grid-template-columns: auto;
+  }
+
+  .card {
+    display: inline-block;
+    border-radius: 10px;
+    width: 35rem;
+    margin: 20px 20px;
+    transition: all 0.2s ease-in-out;
+
+    @include breakpoint-down(lg) {
+      width: 30rem;
+    }
+    @include breakpoint-down(md) {
+      width: 35rem;
+    }
+    @include breakpoint-down(sm) {
+      width: 30rem;
+    }
+    @include breakpoint-down(xs) {
+      width: 25rem;
+    }
+  }
+}

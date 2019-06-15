@@ -91,7 +91,7 @@ class Heading extends Component {
 
 const mapStateToProps = state => {
   return {
-    latestRecipes: state.latestRecipes
+    latestRecipes: state.latest.latestRecipes
   };
 };
 

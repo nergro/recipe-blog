@@ -47,7 +47,7 @@ class Heading extends Component {
                   Home
                 </Nav.Link>
                 <NavDropdown title='Browse recipes' id='nav-dropdown'>
-                  <NavDropdown.Item href='#action/3.1'>
+                  <NavDropdown.Item href='/categories'>
                     All categories
                   </NavDropdown.Item>
                   <NavDropdown.Item href='#action/3.2'>

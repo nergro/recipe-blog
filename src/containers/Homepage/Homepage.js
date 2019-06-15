@@ -14,8 +14,6 @@ class Homepage extends Component {
     this.props.fetchLatestRecipes();
   }
   render() {
-    console.log('LATEST');
-    console.log(this.props.latestRecipes);
     return (
       <div>
         <Heading />
@@ -28,11 +26,6 @@ class Homepage extends Component {
     );
   }
 }
-const mapStateToProps = state => {
-  return {
-    latestRecipes: state.latestRecipes
-  };
-};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -41,6 +34,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Homepage);

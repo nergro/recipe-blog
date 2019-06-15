@@ -1,0 +1,37 @@
+.jumbotron {
+  padding: 50 0;
+  text-align: center;
+  background: linear-gradient(rgba(34, 32, 32, 0.767), rgba(0, 0, 0, 0.9)),
+    url('./assets/cover_photo.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+.jumbotron .path {
+  font-size: 2rem;
+  color: $color__basilorange;
+  .fas,
+  a {
+    color: $color__basilorange;
+  }
+}
+.jumbotron .fas {
+  transform: scaleY(0.7);
+}
+
+.jumbotron h1 {
+  font-size: 5.5rem;
+  color: $color__white;
+
+  @include breakpoint-down(lg) {
+    font-size: 4.5rem;
+  }
+  @include breakpoint-down(md) {
+    font-size: 4rem;
+  }
+  @include breakpoint-down(sm) {
+    font-size: 3.5rem;
+  }
+}

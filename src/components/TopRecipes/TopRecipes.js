@@ -40,7 +40,7 @@ class topRecipes extends Component {
 
 const mapStateToProps = state => {
   return {
-    recipes: state.latestRecipes
+    recipes: state.latest.latestRecipes
   };
 };
 
