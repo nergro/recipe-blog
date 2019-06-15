@@ -44,8 +44,6 @@ class Heading extends Component {
     };
 
     let recipes = this.props.latestRecipes.slice(0, 5);
-    console.log('RECIPEZ');
-    console.log(recipes);
 
     return (
       <div
@@ -60,34 +58,9 @@ class Heading extends Component {
         </h5>
 
         <Slider {...settings}>
-          {/* {recipes.map(recipe => {
-            return  <div>
-            <Card>
-              <Card.Img
-                variant='top'
-                src='https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg'
-              />
-              <Card.Body>
-                <Card.Title>
-                  <i className='fas fa-star full' />
-                  <i className='fas fa-star full' />
-                  <i className='fas fa-star full' />
-                  <i className='fas fa-star empty' />
-                  <i className='fas fa-star empty' />
-                  <br />
-                  <h2>Spicy Arrabiata Penne</h2>
-
-                  <hr />
-                </Card.Title>
-                <Card.Text>#Pasta #Curry</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          })} */}
           {recipes.map(recipe => {
-            console.log(recipe);
             return (
-              <div>
+              <div key={recipe.idMeal}>
                 <Card>
                   <Card.Img variant='top' src={recipe.strMealThumb} />
                   <Card.Body>
