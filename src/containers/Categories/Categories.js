@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import * as actions from '../../store/actions';
-import Heading from '../../components/Heading/Heading';
+import Heading from '../Heading/Heading';
 import Jumbotron from '../../components/UI/Jumbotron/Jumbotron';
 import Footer from '../../components/Footer/Footer';
 import { Card } from 'react-bootstrap';

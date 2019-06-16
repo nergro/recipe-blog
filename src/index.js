@@ -15,6 +15,7 @@ import categoriesReducer from './store/reducers/categories';
 import categoryReducer from './store/reducers/category';
 import recipeReducer from './store/reducers/recipe';
 import flagsReducer from './store/reducers/flags';
+import autocomplete from './store/reducers/autocomplete';
 
 const composeEnhancers =
   process.env.NODE_ENV === 'development'
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   categories: categoriesReducer,
   category: categoryReducer,
   recipe: recipeReducer,
-  flags: flagsReducer
+  flags: flagsReducer,
+  search: autocomplete
 });
 
 const store = createStore(

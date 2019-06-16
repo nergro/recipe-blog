@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Heading from '../../components/Heading/Heading';
+import Heading from '../Heading/Heading';
 import Slider from '../../components/Slider/Slider';
 import Basilbox from '../../components/Basilbox/Basilbox';
 import Footer from '../../components/Footer/Footer';

@@ -8,16 +8,10 @@ const initialState = {
 };
 
 const fetchCategoriesSucces = (state, action) => {
-  // let names = [];
-  // action.categories.map(cat => {
-  //   names.push(cat.strCategory);
-  //   return cat;
-  // });
   return {
     ...state,
     loading: false,
     categories: action.categories
-    // categoriesNames: names
   };
 };
 

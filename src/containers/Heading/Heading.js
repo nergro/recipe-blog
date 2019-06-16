@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions';
+
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../../assets/black-logo.jpeg';
 import { SlideDown } from 'react-slidedown';
 import 'react-slidedown/lib/slidedown.css';
-import Autocomplete from './Autocomplete/Autocomplete';
+import Autocomplete from '../../components/Autocomplete/Autocomplete';
 
 class Heading extends Component {
   state = {
     display: 'none',
-    collapseButtonClicked: false
+    collapseButtonClicked: false,
+    search: ''
   };
 
   changeDisplay = () => {
@@ -20,6 +24,14 @@ class Heading extends Component {
       };
     });
   };
+
+  onInputChange = event => {
+    this.setState({
+      search: event.target.value
+    });
+
+    this.props.fetchSearch(event.target.value);
+  };
   render() {
     return (
       <header>
@@ -28,14 +40,22 @@ class Heading extends Component {
             <img className='logo' src={logo} alt='logo' />
           </a>
           <div className='input'>
-            <input type='search' placeholder='Find a recipe...' />
+            <input
+              type='search'
+              placeholder='Find a recipe...'
+              onChange={e => this.onInputChange(e)}
+            />
             <button>
               <i className='fa fa-search' />
             </button>
             <div className='collapse-button' onClick={this.changeDisplay}>
               <i className='fas fa-bars' />
             </div>
-            {/* <Autocomplete /> */}
+            <Autocomplete
+              meals={this.props.meals}
+              loading={this.props.loading}
+              show={this.state.search.length > 0}
+            />
           </div>
         </div>
         <div className='header-bottom'>
@@ -127,4 +147,20 @@ class Heading extends Component {
   }
 }
 
-export default Heading;
+const mapStateToProps = state => {
+  return {
+    meals: state.search.meals,
+    loading: state.search.loading
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchSearch: search => dispatch(actions.fetchSearch(search))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Heading);

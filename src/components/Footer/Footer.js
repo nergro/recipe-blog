@@ -54,33 +54,37 @@ const footer = props => {
           <div className='center'>
             <h2>Recent Recipes</h2>
             <div className='footer-recipes'>
-              {latestRecipes.map(recipe => (
-                <div className='footer-recipe' key={recipe.idMeal}>
-                  <div className='footer-recipe-img'>
-                    <img src={recipe.strMealThumb} alt='Footer recipe' />
-                  </div>
-                  <div className='footer-recipe-content'>
-                    <div className='footer-recipe-title'>
-                      <h5>
-                        <a href='#1'>{recipe.strMeal}</a>
-                      </h5>
+              {latestRecipes.map(recipe => {
+                const path =
+                  '/categories/' + recipe.strCategory + '/' + recipe.idMeal;
+                return (
+                  <div className='footer-recipe' key={recipe.idMeal}>
+                    <div className='footer-recipe-img'>
+                      <img src={recipe.strMealThumb} alt='Footer recipe' />
                     </div>
-                    <div className='footer-recipe-author'>
-                      <p>
-                        By{' '}
-                        <strong>
-                          {
-                            RANDOM_NAMES[
-                              Math.floor(Math.random() * RANDOM_NAMES.length)
-                            ]
-                          }
-                        </strong>
-                      </p>
+                    <div className='footer-recipe-content'>
+                      <div className='footer-recipe-title'>
+                        <h5>
+                          <a href={path}>{recipe.strMeal}</a>
+                        </h5>
+                      </div>
+                      <div className='footer-recipe-author'>
+                        <p>
+                          By{' '}
+                          <strong>
+                            {
+                              RANDOM_NAMES[
+                                Math.floor(Math.random() * RANDOM_NAMES.length)
+                              ]
+                            }
+                          </strong>
+                        </p>
+                      </div>
                     </div>
+                    <hr />
                   </div>
-                  <hr />
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           <div className='right'>
