@@ -14,20 +14,25 @@ import latestReducer from './store/reducers/latest';
 import categoriesReducer from './store/reducers/categories';
 import categoryReducer from './store/reducers/category';
 import recipeReducer from './store/reducers/recipe';
+import flagsReducer from './store/reducers/flags';
 
-// const composeEnhancers =
-//   process.env.NODE_ENV === 'development'
-//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-//     : null || compose;
+const composeEnhancers =
+  process.env.NODE_ENV === 'development'
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : null || compose;
 
 const rootReducer = combineReducers({
   latest: latestReducer,
   categories: categoriesReducer,
   category: categoryReducer,
-  recipe: recipeReducer
+  recipe: recipeReducer,
+  flags: flagsReducer
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 const app = (
   <Provider store={store}>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../../../store/actions';
+import * as actions from '../../store/actions';
+import { withRouter } from 'react-router-dom';
 
-import Heading from '../../../components/Heading/Heading';
-import Jumbotron from '../../../components/UI/Jumbotron/Jumbotron';
-import Footer from '../../../components/Footer/Footer';
+import Heading from '../../components/Heading/Heading';
+import Jumbotron from '../../components/UI/Jumbotron/Jumbotron';
+import Footer from '../../components/Footer/Footer';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import { Card } from 'react-bootstrap';
-import Spinner from '../../../components/UI/Spinner/Spinner';
 
-class Category extends Component {
+class Flags extends Component {
   state = {
     currentPage: ''
   };
@@ -22,14 +22,11 @@ class Category extends Component {
     this.setState({
       currentPage: curr
     });
-
-    this.props.fetchCategoryMeals(curr);
+    this.props.fetchFlags(curr);
   }
 
   onMealClick = mealId => {
-    this.props.history.push(
-      '/categories/' + this.state.currentPage + '/' + mealId
-    );
+    this.props.history.push('/categories/country/' + mealId);
   };
 
   render() {
@@ -64,7 +61,7 @@ class Category extends Component {
     return (
       <div>
         <Heading />
-        <Jumbotron location={this.state.currentPage} setCategory={true} />
+        <Jumbotron location={this.state.currentPage} />
         <div className='categories-wrapper' style={wrapperStyle}>
           {meals}
         </div>
@@ -76,19 +73,17 @@ class Category extends Component {
 
 const mapStateToProps = state => {
   return {
-    meals: state.category.meals,
-    // catNames: state.categories.categoriesNames,
-    errorMsg: state.category.errorMsg,
-    loading: state.category.loading
+    meals: state.flags.meals
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCategoryMeals: category => dispatch(actions.fetchCategory(category))
+    fetchFlags: country => dispatch(actions.fetchFlags(country))
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Category));
+)(withRouter(Flags));

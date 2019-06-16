@@ -8,6 +8,7 @@ import Homepage from './containers/Homepage/Homepage';
 import Categories from './containers/Categories/Categories';
 import Category from './containers/Categories/Category/Category';
 import Recipe from './containers/Recipe/Recipe';
+import Flags from './containers/Flags/Flags';
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path='/categories/:name/:name' component={Recipe} />
           <Route path='/categories/:name' component={Category} />
           <Route path='/categories' exact component={Categories} />
+          <Route path='/country/:name' component={Flags} />
           <Route path='/' component={Homepage} />
         </Switch>
       </div>

@@ -71,9 +71,7 @@ const footer = props => {
                         <strong>
                           {
                             RANDOM_NAMES[
-                              Math.floor(
-                                Math.random() * RANDOM_NAMES.length - 1
-                              )
+                              Math.floor(Math.random() * RANDOM_NAMES.length)
                             ]
                           }
                         </strong>
