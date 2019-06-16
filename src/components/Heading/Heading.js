@@ -69,12 +69,11 @@ class Heading extends Component {
               className='vertical-menu'
               style={{ display: this.state.display }}
             >
-              <a href='#a' className='first'>
+              <a href='/' className='first'>
                 Homepage
               </a>
-              <a href='#a'>Browse Recipes</a>
-              <a href='#a'>Blog</a>
-              <a href='#a'>Random</a>
+              <a href='/categories'>Browse Recipes</a>
+              <a href='#a'>Random Recipe</a>
             </div>
           </SlideDown>
 

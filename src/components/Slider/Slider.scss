@@ -73,6 +73,15 @@
   }
 }
 
+.card-text {
+  color: #376089 !important;
+  font-size: 1.8rem !important;
+  margin-bottom: 10px !important;
+  @media (max-width: 600px) {
+    font-size: 1.5rem !important;
+  }
+}
+
 .card-img-top {
   border-radius: 10px 10px 0px 0px;
 

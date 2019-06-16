@@ -15,10 +15,10 @@ import categoriesReducer from './store/reducers/categories';
 import categoryReducer from './store/reducers/category';
 import recipeReducer from './store/reducers/recipe';
 
-const composeEnhancers =
-  process.env.NODE_ENV === 'development'
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : null || compose;
+// const composeEnhancers =
+//   process.env.NODE_ENV === 'development'
+//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//     : null || compose;
 
 const rootReducer = combineReducers({
   latest: latestReducer,
@@ -27,10 +27,7 @@ const rootReducer = combineReducers({
   recipe: recipeReducer
 });
 
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const app = (
   <Provider store={store}>
