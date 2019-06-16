@@ -41,7 +41,7 @@
 .viewall-button {
   background-color: $color__basilgreen;
   border: none;
-  color: white;
+  color: white !important;
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
@@ -52,7 +52,7 @@
   border-radius: 3px;
 }
 .viewall-button:hover {
-  opacity: 0.85;
+  background-color: #0d9b4f;
 }
 
 .recipe-wrap {
@@ -65,20 +65,20 @@
 
   @media (max-width: 1999px) {
     grid-template-columns: auto auto auto;
-    .card:nth-child(4n) {
+    .top-recipe-div:nth-child(4n) {
       display: none;
     }
   }
 
   @include breakpoint-down(lgx) {
     grid-template-columns: auto auto;
-    .card:nth-child(3n) {
+    .top-recipe-div:nth-child(3n) {
       display: none;
     }
   }
   @include breakpoint-down(md) {
     grid-template-columns: auto;
-    .card:nth-child(5n) {
+    .top-recipe-div:nth-child(5n) {
       display: none;
     }
   }

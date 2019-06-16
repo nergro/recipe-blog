@@ -14,6 +14,7 @@ class Recipe extends React.PureComponent {
     instructions: ''
   };
   componentDidMount() {
+    // passint id per propsus ir jei yra id fetchint random metoda, jei ne paprasta
     let curr = this.props.location.pathname
       .split('/')
       .slice(-1)
@@ -128,6 +129,7 @@ class Recipe extends React.PureComponent {
                     </label>
                   );
                 }
+                return null;
               })}
             </div>
           </div>

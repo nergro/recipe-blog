@@ -135,9 +135,9 @@
     .right-col {
       flex-basis: 40%;
       margin-left: 15px;
+      text-align: center;
       @media (max-width: 1000px) {
         flex-basis: 100%;
-        text-align: center;
       }
 
       h2 {

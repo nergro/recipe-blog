@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { Card } from 'react-bootstrap';
 import Slider from 'react-slick';
 import Spinner from '../UI/Spinner/Spinner';
 
 class Heading extends Component {
+  onMealClick = (mealId, category) => {
+    const path = '/categories/' + category + '/' + mealId;
+    this.props.history.push(path);
+  };
+
   render() {
     var settings = {
       infinite: true,
@@ -52,7 +58,12 @@ class Heading extends Component {
       <Slider {...settings}>
         {recipes.map(recipe => {
           return (
-            <div key={recipe.idMeal}>
+            <div
+              key={recipe.idMeal}
+              onClick={(mealId, category) =>
+                this.onMealClick(recipe.idMeal, recipe.strCategory)
+              }
+            >
               <Card>
                 <Card.Img variant='top' src={recipe.strMealThumb} />
                 <Card.Body>
@@ -111,4 +122,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Heading);
+export default connect(mapStateToProps)(withRouter(Heading));
