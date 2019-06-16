@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as action from '../../store/actions';
@@ -8,7 +8,7 @@ import Jumbotron from '../../components/UI/Jumbotron/Jumbotron';
 import Footer from '../../components/Footer/Footer';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
-class Recipe extends React.PureComponent {
+class Recipe extends Component {
   state = {
     mealId: '',
     instructions: ''
