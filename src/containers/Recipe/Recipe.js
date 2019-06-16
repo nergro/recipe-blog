@@ -14,7 +14,6 @@ class Recipe extends React.PureComponent {
     instructions: ''
   };
   componentDidMount() {
-    // passint id per propsus ir jei yra id fetchint random metoda, jei ne paprasta
     let curr = this.props.location.pathname
       .split('/')
       .slice(-1)
@@ -26,6 +25,9 @@ class Recipe extends React.PureComponent {
     this.props.fetchRecipe(curr);
   }
   render() {
+    console.log('RECIPE');
+    console.log(this.props.recipe);
+    console.log('LOADING: ' + this.props.loading);
     let ings = [];
     let meas = [];
 
@@ -68,6 +70,10 @@ class Recipe extends React.PureComponent {
 
     const recipeContent = this.props.loading ? (
       <Spinner />
+    ) : this.props.recipe.length === 0 ? (
+      <h1 style={{ textAlign: 'center', margin: '50px 0' }}>
+        Sorry! No recipe was found :(
+      </h1>
     ) : (
       <div className='single-recipe'>
         <div className='head'>
@@ -146,10 +152,13 @@ class Recipe extends React.PureComponent {
     return (
       <div>
         <Heading />
-        <Jumbotron
-          location={this.props.recipe.strMeal}
-          category={this.props.recipe.strCategory}
-        />
+
+        {this.props.recipe.length === 0 ? null : (
+          <Jumbotron
+            location={this.props.recipe.strMeal}
+            category={this.props.recipe.strCategory}
+          />
+        )}
         {recipeContent}
         <Footer />
       </div>
