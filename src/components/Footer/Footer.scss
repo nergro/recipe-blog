@@ -114,8 +114,6 @@ footer img {
     }
 
     @include breakpoint-down(md) {
-      .footer-recipes {
-      }
       .footer-recipe-content {
         margin: 10px 0 0 60px;
       }
@@ -198,8 +196,8 @@ footer img {
 .right h2 {
   color: $color__basilorange;
 }
-.right a:hover {
-  opacity: 0.7;
+.right a:hover p {
+  color: rgb(112, 107, 107);
 }
 .right p {
   font-size: 2rem;
