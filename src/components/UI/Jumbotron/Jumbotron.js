@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from '../Spinner/Spinner';
 
 const jumbotron = props => {
   const hrefpath = '/categories/' + props.category;
@@ -24,10 +25,12 @@ const jumbotron = props => {
       &nbsp;&nbsp;{props.location}
     </div>
   );
+
+  const location = props.location ? props.location.toUpperCase() : <Spinner />;
   return (
     <div className='jumbotron'>
       {path}
-      <h1>{props.location.toUpperCase()}</h1>
+      <h1>{location}</h1>
     </div>
   );
 };

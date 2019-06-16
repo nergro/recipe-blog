@@ -11,7 +11,11 @@ const reducer = (state = initialState, action) => {
     case actionTypes.FETCH_RECIPE_START:
       return { ...state, loading: true };
     case actionTypes.FETCH_RECIPE_SUCCESS:
-      return { ...state, loading: false, recipe: action.recipe };
+      return {
+        ...state,
+        loading: false,
+        recipe: action.recipe
+      };
     case actionTypes.FETCH_RECIPE_FAIL:
       return { ...state, loading: false, errorMsg: action.error.message };
     default:

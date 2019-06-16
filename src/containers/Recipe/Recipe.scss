@@ -91,6 +91,9 @@
       flex-basis: 40%;
       padding: 10px;
       text-align: center;
+      @media (max-width: 1000px) {
+        flex-basis: 100%;
+      }
 
       img {
         max-width: 450px;
@@ -110,12 +113,11 @@
       }
 
       .prep {
-        .serving,
+        display: flex;
+        justify-content: center;
+
         .time {
-          margin: 0 20px;
-          @include breakpoint-down(md) {
-            margin: 0 50px;
-          }
+          margin-left: 10px;
         }
         .serving span,
         .time span {
@@ -132,6 +134,11 @@
     }
     .right-col {
       flex-basis: 40%;
+      margin-left: 15px;
+      @media (max-width: 1000px) {
+        flex-basis: 100%;
+        text-align: center;
+      }
 
       h2 {
         font-size: 4.5rem;
@@ -155,33 +162,27 @@
         padding-bottom: 50px;
         justify-items: center;
 
-        // float: left;
-        // columns: 2;
         -webkit-user-select: none; /* Chrome all / Safari all */
         -moz-user-select: none; /* Firefox all */
         -ms-user-select: none; /* IE 10+ */
         user-select: none; /* Likely future */
-        @include breakpoint-down(md) {
-          columns: 1;
+
+        @media (max-width: 500px) {
+          grid-template-columns: auto;
         }
 
         .measure {
           font-weight: $font-weight__headings;
-        }
-        .input-label {
-          @include breakpoint-down(md) {
-            font-size: 1.5rem;
-          }
         }
       }
     }
   }
 
   .instructions {
+    text-align: center;
     h2 {
       font-size: 4.5rem;
       color: $color__grey;
-      text-align: center;
 
       @include breakpoint-down(lg) {
         font-size: 4rem;
@@ -195,12 +196,17 @@
     }
 
     .instr-text {
-      display: flex;
+      @media (max-width: 800px) {
+        margin: 0 30px;
+      }
 
-      justify-content: center;
+      .instruction-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
       p {
-        width: 80%;
-        text-align: center;
+        width: 100%;
         font-size: 1.8rem;
       }
     }

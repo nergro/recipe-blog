@@ -12,7 +12,7 @@ class topRecipes extends Component {
         <button className='viewall-button'>View All Recipes</button>
         <div className='recipe-wrap' id='recipe-wrap'>
           {recipes.map(recipe => (
-            <Card className='top1'>
+            <Card className='top1' key={recipe.idMeal}>
               <Card.Img variant='top' src={recipe.strMealThumb} />
               <Card.Body>
                 <Card.Title>

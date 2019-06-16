@@ -32,13 +32,40 @@ class Recipe extends React.PureComponent {
 
     Object.keys(this.props.recipe).map((key, index) => {
       if (index >= 9 && index <= 28) {
-        ings.push(this.props.recipe[key]);
+        if (this.props.recipe[key] != null) {
+          ings.push(this.props.recipe[key]);
+        }
       }
       if (index >= 29 && index <= 48) {
-        meas.push(this.props.recipe[key]);
+        if (this.props.recipe[key]) {
+          meas.push(this.props.recipe[key]);
+        }
       }
       return ings;
     });
+
+    let instruction = '';
+    instruction = this.props.recipe.strInstructions;
+    if (instruction) {
+      instruction = instruction.split('.');
+      instruction = instruction.map(inst => {
+        if (inst.charAt(0) === ' ' || !inst.charAt(0).match(/^[A-Za-z]/)) {
+          return inst.slice(1);
+        }
+        return inst;
+      });
+
+      instruction = instruction.map(sentence => {
+        if (sentence.length > 0) {
+          return (
+            <li>
+              <p>{sentence}</p>
+            </li>
+          );
+        }
+        return null;
+      });
+    }
 
     const recipeContent = this.props.loading ? (
       <Spinner />
@@ -110,16 +137,30 @@ class Recipe extends React.PureComponent {
         <div className='instructions'>
           <h2>Instructions</h2>
           <div className='instr-text'>
-            <p>{this.props.recipe.strInstructions}</p>
+            <ul className='instruction-list'>{instruction}</ul>
           </div>
         </div>
       </div>
     );
 
+    // console.log('MEALNAME');
+    // console.log(this.props.mealName);
+    let str = '';
+    str = this.props.recipe.strMeal;
+    console.log();
+    if (str) {
+      console.log('MEALNAME');
+      console.log('URA');
+      console.log(str.length);
+    }
+
     return (
       <div>
         <Heading />
-        <Jumbotron location='Somerecipe' category='Beef' />
+        <Jumbotron
+          location={this.props.recipe.strMeal}
+          category={this.props.recipe.strCategory}
+        />
         {recipeContent}
         <Footer />
       </div>
@@ -130,7 +171,8 @@ class Recipe extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     recipe: state.recipe.recipe,
-    loading: state.recipe.loading
+    loading: state.recipe.loading,
+    mealName: state.recipe.mealName
   };
 };
 
