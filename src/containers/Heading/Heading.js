@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
+
+import debounce from 'lodash.debounce';
 
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from '../../assets/black-logo.jpeg';
@@ -8,11 +10,39 @@ import { SlideDown } from 'react-slidedown';
 import 'react-slidedown/lib/slidedown.css';
 import Autocomplete from '../../components/Autocomplete/Autocomplete';
 
-class Heading extends Component {
-  state = {
-    display: 'none',
-    collapseButtonClicked: false,
-    search: ''
+class Heading extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      display: 'none',
+      collapseButtonClicked: false,
+      search: '',
+      isOpen: false
+    };
+    this.handleSearch = debounce(this.handleSearch, 500);
+    this.autoCompleteRef = React.createRef();
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+    this.setState({
+      isOpen: this.props.isOpen
+    });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleClickOutside = event => {
+    if (
+      this.autoCompleteRef &&
+      !this.autoCompleteRef.current.contains(event.target)
+    ) {
+      this.setState({
+        isOpen: false
+      });
+    }
   };
 
   changeDisplay = () => {
@@ -25,13 +55,23 @@ class Heading extends Component {
     });
   };
 
+  handleSearch() {
+    this.props.fetchSearch(this.state.search);
+  }
+
   onInputChange = event => {
     this.setState({
       search: event.target.value
     });
-
-    this.props.fetchSearch(event.target.value);
+    this.handleSearch();
   };
+
+  openSearch = () => {
+    this.setState({
+      isOpen: true
+    });
+  };
+
   render() {
     return (
       <header>
@@ -44,6 +84,7 @@ class Heading extends Component {
               type='search'
               placeholder='Find a recipe...'
               onChange={e => this.onInputChange(e)}
+              onFocus={this.openSearch}
             />
             <button>
               <i className='fa fa-search' />
@@ -51,11 +92,13 @@ class Heading extends Component {
             <div className='collapse-button' onClick={this.changeDisplay}>
               <i className='fas fa-bars' />
             </div>
-            <Autocomplete
-              meals={this.props.meals}
-              loading={this.props.loading}
-              show={this.state.search.length > 0}
-            />
+            <div ref={this.autoCompleteRef}>
+              <Autocomplete
+                meals={this.props.meals}
+                loading={this.props.loading}
+                isOpen={this.state.isOpen}
+              />
+            </div>
           </div>
         </div>
         <div className='header-bottom'>

@@ -94,7 +94,7 @@ class Heading extends Component {
         <h1 className='text-centered'>Sorry! Something went wrong :(</h1>
       ) : (
         <React.Fragment>
-          <h1 className='text-centered'>Welcome to our recipe blog</h1>
+          <h1 className='text-centered'>Welcome to the recipe blog</h1>
           <h5 className='text-centered'>
             Over 5000 recipes <br /> The most delicious experience for You
           </h5>
