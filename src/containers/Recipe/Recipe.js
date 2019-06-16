@@ -25,8 +25,6 @@ class Recipe extends React.PureComponent {
     this.props.fetchRecipe(curr);
   }
   render() {
-    console.log('RECIPE');
-    console.log(this.props.recipe);
     let ings = [];
     let meas = [];
 
@@ -55,10 +53,10 @@ class Recipe extends React.PureComponent {
         return inst;
       });
 
-      instruction = instruction.map(sentence => {
+      instruction = instruction.map((sentence, index) => {
         if (sentence.length > 0) {
           return (
-            <li>
+            <li key={index}>
               <p>{sentence}</p>
             </li>
           );
@@ -142,17 +140,6 @@ class Recipe extends React.PureComponent {
         </div>
       </div>
     );
-
-    // console.log('MEALNAME');
-    // console.log(this.props.mealName);
-    let str = '';
-    str = this.props.recipe.strMeal;
-    console.log();
-    if (str) {
-      console.log('MEALNAME');
-      console.log('URA');
-      console.log(str.length);
-    }
 
     return (
       <div>

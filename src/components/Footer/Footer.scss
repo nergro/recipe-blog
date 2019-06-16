@@ -13,7 +13,7 @@ footer img {
 .learnmore-footer-button {
   background-color: $color__basilgreen;
   border: none;
-  color: white;
+  color: white !important;
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
@@ -169,10 +169,10 @@ footer img {
     font-size: 1.1rem;
   }
 }
-.footer-recipes hr {
-  background: $color__smooth-grey;
-  height: 0.5px;
-}
+// .footer-recipes hr {
+//   background: $color__smooth-grey;
+//   height: 0.5px;
+// }
 
 .right {
   position: relative;
@@ -206,24 +206,24 @@ footer img {
   color: $color__lightgray;
 }
 
-.viewall-footer-right-button {
-  background-color: $color__basilorange;
-  border: none;
-  color: $color__black-russian;
-  padding: 5px 15px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.7rem;
-  font-weight: $font-weight__headings;
-  cursor: pointer;
-  border-radius: 3px;
-  position: absolute;
-  top: 105%;
-  right: 75%;
-}
-.viewall-footer-right-button:hover {
-  opacity: 0.85;
-}
+// .viewall-footer-right-button {
+//   background-color: $color__basilorange;
+//   border: none;
+//   color: $color__black-russian;
+//   padding: 5px 15px;
+//   text-align: center;
+//   text-decoration: none;
+//   font-size: 1.7rem;
+//   font-weight: $font-weight__headings;
+//   cursor: pointer;
+//   border-radius: 3px;
+//   position: absolute;
+//   top: 105%;
+//   right: 75%;
+// }
+// .viewall-footer-right-button:hover {
+//   opacity: 0.85;
+// }
 
 .footer-row {
   padding-bottom: 50px;

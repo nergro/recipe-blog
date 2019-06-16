@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../store/actions';
 
 import Heading from '../../components/Heading/Heading';
 import Slider from '../../components/Slider/Slider';
@@ -10,9 +8,6 @@ import TopRecipes from '../../components/TopRecipes/TopRecipes';
 import Flags from '../../components/Flags/Flags';
 
 class Homepage extends Component {
-  componentDidMount() {
-    this.props.fetchLatestRecipes();
-  }
   render() {
     return (
       <div>
@@ -27,13 +22,4 @@ class Homepage extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchLatestRecipes: () => dispatch(actions.fetchLatestRecipes())
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Homepage);
+export default Homepage;

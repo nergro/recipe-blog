@@ -79,22 +79,46 @@ class Heading extends Component {
           </SlideDown>
 
           <div className='socials'>
-            <a href='#1'>
+            <a
+              href='https://www.facebook.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-facebook-square' />
             </a>
-            <a href='#1'>
+            <a
+              href='https://www.instagram.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-instagram' />
             </a>
-            <a href='#1'>
+            <a
+              href='https://twitter.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-twitter' />
             </a>
-            <a href='#1'>
+            <a
+              href='https://www.snapchat.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-snapchat' />
             </a>
-            <a href='#1'>
+            <a
+              href='https://www.pinterest.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-pinterest' />
             </a>
-            <a href='#1'>
+            <a
+              href='https://www.linkedin.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <i className='fab fa-linkedin' />
             </a>
           </div>
