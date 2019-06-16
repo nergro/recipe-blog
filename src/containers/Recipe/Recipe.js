@@ -25,9 +25,6 @@ class Recipe extends Component {
     this.props.fetchRecipe(curr);
   }
   render() {
-    console.log('RECIPE');
-    console.log(this.props.recipe);
-    console.log('LOADING: ' + this.props.loading);
     let ings = [];
     let meas = [];
 

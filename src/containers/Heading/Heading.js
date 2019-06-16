@@ -123,7 +123,7 @@ class Heading extends PureComponent {
                     Miscellaneous
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href='#link'>Random</Nav.Link>
+                <Nav.Link href='/random'>Random</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -136,7 +136,7 @@ class Heading extends PureComponent {
                 Homepage
               </a>
               <a href='/categories'>Browse Recipes</a>
-              <a href='#a'>Random Recipe</a>
+              <a href='/random'>Random Recipe</a>
             </div>
           </SlideDown>
 
