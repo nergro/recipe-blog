@@ -134,7 +134,10 @@ const footer = props => {
 
       <div className='copyright'>
         <p>
-          Copyright &copy; 2019 <a href='#1'>nng.lt</a>
+          Copyright &copy; 2019{' '}
+          <a href='https://nng.lt' target='_blank' rel='noopener noreferrer'>
+            nng.lt
+          </a>
         </p>
         <div className='footer-socials'>
           <a
