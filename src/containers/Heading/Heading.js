@@ -73,6 +73,8 @@ class Heading extends PureComponent {
   };
 
   render() {
+    const randomMealId = Math.floor(Math.random() * (52976 - 52802)) + 52802;
+    const randomMealPath = '/categories/random/' + randomMealId;
     return (
       <header>
         <div className='header-top'>
@@ -123,7 +125,7 @@ class Heading extends PureComponent {
                     Miscellaneous
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href='/random'>Random</Nav.Link>
+                <Nav.Link href={randomMealPath}>Random</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -136,7 +138,7 @@ class Heading extends PureComponent {
                 Homepage
               </a>
               <a href='/categories'>Browse Recipes</a>
-              <a href='/random'>Random Recipe</a>
+              <a href={randomMealPath}>Random Recipe</a>
             </div>
           </SlideDown>
 

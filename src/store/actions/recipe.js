@@ -34,17 +34,3 @@ export const fetchRecipe = recipeId => {
       });
   };
 };
-
-export const fetchRandomRecipe = () => {
-  return dispatch => {
-    dispatch(fetchRecipeStart());
-    axios
-      .get('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(res => {
-        dispatch(fetchRecipeSuccess(res.data['meals'][0]));
-      })
-      .catch(error => {
-        dispatch(fetchRecipeFail(error));
-      });
-  };
-};

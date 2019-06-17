@@ -9,7 +9,6 @@ import Categories from './containers/Categories/Categories';
 import Category from './containers/Categories/Category/Category';
 import Recipe from './containers/Recipe/Recipe';
 import Flags from './containers/Flags/Flags';
-import Random from './containers/Recipe/Random/Random';
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +22,6 @@ class App extends Component {
           <Route path='/categories/:name' component={Category} />
           <Route path='/categories' exact component={Categories} />
           <Route path='/country/:name' component={Flags} />
-          <Route path='/random' component={Random} />
           <Route path='/' component={Homepage} />
         </Switch>
       </div>
